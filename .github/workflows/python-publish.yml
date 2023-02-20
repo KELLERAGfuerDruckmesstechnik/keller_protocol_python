@@ -35,8 +35,12 @@ jobs:
       run: |
         python -m pip install -r requirements.txt --upgrade pip
         pip install build
-    - name: tree
-      run: tree
+    - name: Output Run ID
+      run: echo ${{ github.run_id }}
+    - name: Output Run Number
+      run: echo ${{ github.run_number }}
+    - name: Output Run Attempt
+      run: echo ${{ github.run_attempt }}
     - name: Build package
       run: python -m build
     - name: Publish package
