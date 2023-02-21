@@ -4,7 +4,7 @@ import struct
 
 class KellerProtocol:
     def __init__(
-            self, port: int, baud_rate: int, timeout: float = 0.2, echo: bool = True
+            self, port: str, baud_rate: int, timeout: float = 0.2, echo: bool = True
     ):
         self.serial = serial.Serial(
             port=port,

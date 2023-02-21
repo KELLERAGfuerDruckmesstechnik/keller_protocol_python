@@ -12,12 +12,31 @@
 ```pip install keller-protocol```  
 See https://pypi.org/project/keller-protocol/
 
-
 ## Usage
+See https://keller-druck.com/en/downloads?categories=Software.Communication-Protocols
+for the Communication Protocol.
 
-todo: Hinweise keller_protocol.py + Genereller Ablauf mit Beispiel von 2-3 Aufrufen
-
-
+1.  Import the Keller Protocol (keller_protocol.py) in your Python Project:
+````python
+import keller_protocol
+````
+2.  Define Communication settings like port, baud-rate, timeout and echo:
+````python
+transmitter = keller_protocol.KellerProtocol(
+    port="COM17", baud_rate=115200, address=2, timeout=0.2, echo=True
+)
+````
+3.  To be able to communicate with the transmitter you will have to use F48 first to initialize.
+Otherwise, an exception occurs. F48 will return the firmware version. Make sure the device address is correct. (Default 1).
+If only one transmitter is connected, you can use the "transparent" address 250.
+````python
+device_address = 1
+firmware = transmitter.f48(device_address)
+````
+4.  Read out current pressure value from the transmitter. You will receive the pressure value P1 with channel 1.
+````python
+p1 = transmitter.f73(device_address, 1)
+````
 ## Usage Example with X Line
 ```python
 import keller_protocol
