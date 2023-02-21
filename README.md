@@ -107,4 +107,5 @@ if __name__ == "__main__":
 
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Upload Python Package](https://github.com/KELLERAGfuerDruckmesstechnik/keller_protocol_python/actions/workflows/python-publish.yml/badge.svg)](https://github.com/KELLERAGfuerDruckmesstechnik/keller_protocol_python/actions/workflows/python-publish.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
