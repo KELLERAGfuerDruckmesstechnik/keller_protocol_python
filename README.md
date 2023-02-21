@@ -10,7 +10,7 @@
 ## Installation
 
 ```pip install keller-protocol```  
-See https://pypi.org/manage/project/keller-protocol/releases/
+See https://pypi.org/project/keller-protocol/
 
 
 ## Usage
