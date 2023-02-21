@@ -23,7 +23,7 @@ import keller_protocol
 2.  Define Communication settings like port, baud-rate, timeout and echo:
 ````python
 transmitter = keller_protocol.KellerProtocol(
-    port="COM17", baud_rate=115200, address=2, timeout=0.2, echo=True
+    port="COM17", baud_rate=115200, timeout=0.2, echo=True
 )
 ````
 3.  To be able to communicate with the transmitter you will have to use F48 first to initialize.
