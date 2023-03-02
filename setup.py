@@ -6,7 +6,6 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="keller_protocol",
     version="1.0.0",
-    scripts=["keller_protocol"],
     author="Lukas Weber",
     author_email="engineering@keller-druck.com",
     description="Python package source for KELLER protocol",
