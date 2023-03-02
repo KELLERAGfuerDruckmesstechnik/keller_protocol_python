@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/KELLERAGfuerDruckmesstechnik/keller_protocol_python",
-    install_requires=[pyserial]
+    install_requires=["pyserial"]
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
