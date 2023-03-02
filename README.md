@@ -18,11 +18,11 @@ for the Communication Protocol.
 
 1.  Import the Keller Protocol (keller_protocol.py) in your Python Project:
 ````python
-import keller_protocol
+import keller_protocol.keller_protocol as kp
 ````
 2.  Define Communication settings like port, baud-rate, timeout and echo:
 ````python
-transmitter = keller_protocol.KellerProtocol(
+transmitter = kp.KellerProtocol(
     port="COM17", baud_rate=115200, timeout=0.2, echo=True
 )
 ````
@@ -39,13 +39,13 @@ p1 = transmitter.f73(device_address, 1)
 ````
 ## Usage Example with X Line
 ```python
-import keller_protocol
+import keller_protocol.keller_protocol as kp
 import time
 
 
 class XLine:
     def __init__(self, port, baud_rate, address, timeout, echo=True):
-        self.bus = keller_protocol.KellerProtocol(port, baud_rate, timeout, echo)
+        self.bus = kp.KellerProtocol(port, baud_rate, timeout, echo)
         self.address = address
         self.serial_number = None
         self.f73_channels = {
