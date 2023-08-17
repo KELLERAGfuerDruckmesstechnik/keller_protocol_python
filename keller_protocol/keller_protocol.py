@@ -4,7 +4,7 @@ import struct
 
 class KellerProtocol:
     def __init__(
-            self, port: str, baud_rate: int, timeout: float = 0.2, echo: bool = True
+        self, port: str, baud_rate: int, timeout: float = 0.2, echo: bool = True
     ):
         self.serial = serial.Serial(
             port=port,
@@ -184,6 +184,29 @@ class KellerProtocol:
         command = [address, 100, index]
         answer = self._send_receive(command, 9)
         return answer[2:7]
+
+    def f101(self, address: int, index: int, b0: int, b1: int, b2: int, b3: int):
+        """Function 101: Write Configuration
+
+        Please use Function 33 instead of this function for devices of Class.Group-version 5.20-5.24 and earlier.
+        With Function 32/33 you have access to a single parameter instead of all four parameters
+        :param address: Device address
+        :param index: Index to write
+        :param b0: Value to write to device (byte)
+        :param b1: Value to write to device (byte)
+        :param b2: Value to write to device (byte)
+        :param b3: Value to write to device (byte)
+        """
+        if index > 255:
+            raise ValueError(
+                f"Incorrect value for F101 index:{index} has to be lower than 256"
+            )
+        if max[b0, b1, b2, b3] > 255:
+            raise ValueError(
+                f"Incorrect value for b0-b3 for index F101: has to be lower than 256"
+            )
+        command = [address, 101, index, b0, b1, b2, b3]
+        self._send_receive(command, 5)
 
     def _send_receive(self, command: list, read_byte_count: int):
         """send a command and receive a message
