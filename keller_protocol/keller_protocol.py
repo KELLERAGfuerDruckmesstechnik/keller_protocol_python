@@ -201,7 +201,7 @@ class KellerProtocol:
             raise ValueError(
                 f"Incorrect value for F101 index:{index} has to be lower than 256"
             )
-        if max[b0, b1, b2, b3] > 255:
+        if max([b0, b1, b2, b3]) > 255:
             raise ValueError(
                 f"Incorrect value for b0-b3 for index F101: has to be lower than 256"
             )
