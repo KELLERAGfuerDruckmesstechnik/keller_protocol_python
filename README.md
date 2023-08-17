@@ -18,7 +18,7 @@ for the Communication Protocol.
 
 1.  Import the Keller Protocol (keller_protocol.py) in your Python Project:
 ````python
-import keller_protocol.keller_protocol as kp
+from keller_protocol import keller_protocol as kp
 ````
 2.  Define Communication settings like port, baud-rate, timeout and echo:
 ````python
