@@ -12,7 +12,7 @@ class TestKellerProtocol(unittest.TestCase):
         self.bus = keller_protocol.KellerProtocol(
             "COM17", baud_rate=115200, timeout=200 / 1000, echo=True
         )
-        self.address = 2
+        self.address = 42
         # init device
         self.bus.f48(self.address)
 

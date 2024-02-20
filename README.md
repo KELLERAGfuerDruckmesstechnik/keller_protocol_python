@@ -20,10 +20,10 @@ for the Communication Protocol.
 ````python
 from keller_protocol import keller_protocol as kp
 ````
-2.  Define Communication settings like port, baud-rate, timeout and echo:
+2.  Define Communication settings like port, baud-rate (Default 9600), timeout (Default 0.3s) and echo (Default True):
 ````python
 transmitter = kp.KellerProtocol(
-    port="COM17", baud_rate=115200, timeout=0.2, echo=True
+    port="COM17", baud_rate=9600, timeout=0.3, echo=True
 )
 ````
 3.  To be able to communicate with the transmitter you will have to use F48 first to initialize.
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     # Example usage:
     # Init transmitter
     transmitter = XLine(
-        port="COM17", baud_rate=115200, address=2, timeout=0.2, echo=True
+        port="COM17", baud_rate=9600, address=1, timeout=0.3, echo=True
     )
     serial_number = transmitter.get_serial()
     print(f"Transmitter serial number:{serial_number}")
